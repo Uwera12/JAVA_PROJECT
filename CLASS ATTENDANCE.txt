@@ -9,11 +9,11 @@ public class ClassAttendance {
         System.out.print("Enter total number of students in class: ");
         int classSize = adb.nextInt();
 
-        int[] attendance = new int[30]; // up to 30 days
+        int[] attendance = new int[30]; 
         int days = 0;
         char choice;
 
-        // OUR DO LOOP
+        
         do {
             System.out.print("Enter number of students present on day " + (days + 1) + ": ");
             attendance[days] = adb.nextInt();
@@ -48,3 +48,4 @@ public class ClassAttendance {
     }
 
 }
+
