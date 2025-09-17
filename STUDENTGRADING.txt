@@ -7,7 +7,9 @@ public class STUDENT {
 	public static void main(String[] args) {
         Scanner FG= new Scanner(System.in);
 
-        int totalStudents = 0, passCount = 0, failCount = 0;
+        int totalStudents = 0; 
+        int passCount = 0;
+        int failCount = 0;
         int marks;
 
         while (true) {
@@ -15,7 +17,7 @@ public class STUDENT {
             marks = FG.nextInt();
 
             if (marks == -1) {
-                break; // stop loop
+                break;
             }
 
             totalStudents++;
@@ -52,5 +54,6 @@ public class STUDENT {
         FG.close();
     }
 }
+
 
 
