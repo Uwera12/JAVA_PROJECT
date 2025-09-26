@@ -1,0 +1,55 @@
+package SUPERMARKET;
+
+import java.util.Scanner;
+
+public class ClassAttendance {
+	public static void main(String[] args) {
+        Scanner adb = new Scanner(System.in);
+
+        System.out.print("Enter total number of students in class: ");
+        int classSize = adb.nextInt();
+
+        int[] attendance = new int[30]; // up to 30 days
+        int days = 0;
+        char choice;
+
+        // Record attendance
+        do {
+            System.out.print("Enter number of students present on day " + (days + 1) + ": ");
+            attendance[days] = adb.nextInt();
+            days++;
+
+            System.out.print("Do you want to enter another day? (y/n): ");
+            choice = adb.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        // Calculate
+        int totalAttendance = 0, lowDays = 0;
+        for (int i = 0; i < days; i++) {
+            totalAttendance += attendance[i];
+            if (attendance[i] < (classSize / 2)) {
+                lowDays++;
+            }
+        }
+        double average = (double) totalAttendance / days;
+        double lowPercent = (lowDays * 100.0) / days;
+
+        // Report
+        System.out.println("\n--- Attendance Report ---");
+        System.out.println("Day  Students Present");
+        for (int i = 0; i < days; i++) {
+            System.out.println((i + 1) + "    " + attendance[i]);
+        }
+        System.out.println("\nAverage Attendance: " + average);
+        System.out.println("Days with low attendance (<50%): " + lowDays + " (" + lowPercent + "%)");
+
+        adb.close();
+    }
+}
+
+	
+
+	
+
+
